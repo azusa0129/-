@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>취미 추천 설문</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f2f2f2;
+      padding: 40px;
+    }
+
+    form {
+      background: white;
+      display: inline-block;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .question-step {
+      margin: 20px 0;
+      text-align: left;
+    }
+
+    .question-step label {
+      display: block;
+      margin: 6px 0;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 30px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📱 스마트폰 의존 설문</h1>
+  <p>몇 가지 질문에 답하면 어울리는 취미를 추천해드려요!</p>
+
+  <form id="surveyForm">
+    <div class="question-step" style="display:none">
+      <p>1. 혼자 있는 걸 좋아하나요?</p>
+      <label><input type="radio" name="q1" value="혼자"> 네, 혼자가 좋아요</label>
+      <label><input type="radio" name="q1" value="함께"> 아니요, 함께 있는 걸 좋아해요</label>
+      <br><button type="button" onclick="nextStep()">다음</button>
+    </div>
+
+    <div class="question-step" style="display:none">
+      <p>2. 활동적인 걸 좋아하나요?</p>
+      <label><input type="radio" name="q2" value="활동"> 네, 몸을 움직이는 게 좋아요</label>
+      <label><input type="radio" name="q2" value="정적"> 아니요, 조용한 걸 좋아해요</label>
+      <br><button type="button" onclick="nextStep()">다음</button>
+    </div>
+
+    <div class="question-step" style="display:none">
+      <p>3. 실내와 실외 중 어디가 더 편한가요?</p>
+      <label><input type="radio" name="q3" value="실내"> 실내</label>
+      <label><input type="radio" name="q3" value="실외"> 실외</label>
+      <br><button type="button" onclick="nextStep()">다음</button>
+    </div>
+
+    <div class="question-step" style="display:none">
+      <p>4. 새로운 걸 배우는 걸 좋아하나요?</p>
+      <label><input type="radio" name="q4" value="예"> 네, 새로운 걸 배우는 게 좋아요</label>
+      <label><input type="radio" name="q4" value="아니요"> 아니요, 새로운 건 별로예요</label>
+      <br><button type="button" onclick="nextStep()">다음</button>
+    </div>
+
+    <div class="question-step" style="display:none">
+      <p>5. 음악이나 예술 활동에 관심이 있나요?</p>
+      <label><input type="radio" name="q5" value="예"> 네, 관심 있어요</label>
+      <label><input type="radio" name="q5" value="아니요"> 아니요, 관심 없어요</label>
+      <br><button type="button" onclick="nextStep()">다음</button>
+    </div>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    let currentStep = 0;
+    const steps = document.querySelectorAll(".question-step");
+
+    function showStep(index) {
+      steps.forEach((step, i) => {
+        step.style.display = i === index ? "block" : "none";
+      });
+    }
+
+    function nextStep() {
+      if (currentStep < steps.length - 1) {
+        currentStep++;
+        showStep(currentStep);
+      } else {
+        recommendHobby();
+      }
+    }
+
+    function recommendHobby() {
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      const q3 = document.querySelector('input[name="q3"]:checked');
+      const q4 = document.querySelector('input[name="q4"]:checked');
+      const q5 = document.querySelector('input[name="q5"]:checked');
+      const result = document.getElementById("result");
+
+      if (!q1 || !q2 || !q3 || !q4 || !q5) {
+        result.innerText = "모든 질문에 응답해주세요!";
+        return;
+      }
+
+      if (q1.value === "함께" && q2.value === "활동" && q3.value === "실외") {
+        result.innerText = "🎾 추천 취미: 축구 또는 농구";
+      } else if (q1.value === "혼자" && q2.value === "정적" && q3.value === "실내" && q5.value === "예") {
+        result.innerText = "🎨 추천 취미: 그림 그리기나 악기 배우기";
+      } else if (q4.value === "예" && q5.value === "예") {
+        result.innerText = "🎭 추천 취미: 뮤지컬 감상, 연극, 악기 연주";
+      } else {
+        result.innerText = "📚 추천 취미: 독서, 산책 또는 새로운 활동 시도";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      showStep(0);
+    });
+  </script>
+
+</body>
+</html>
