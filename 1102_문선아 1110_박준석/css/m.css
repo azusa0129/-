@@ -1,42 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 
-#main {
-  color: #556b2f;
-  font-family: "Jua", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.search-form {
-  display: flex;
-  gap: 10px;
-}
-
-.search-input {
-  padding: 8px 12px;
-  font-size: 16px;
-  border: 2px solid #8b5e3c;
-  border-radius: 4px;
-  outline: none;
-}
-
-.search-input:focus {
-  border-color: #556b2f;
-}
-
-.search-button {
-  padding: 8px 16px;
-  background-color: #556b2f;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.search-button:hover {
-  background-color: #6a8c3f;
-}
 
 nav ul {
   display: flex;
@@ -49,14 +12,19 @@ nav ul {
 nav ul li {
   display: inline-block;
   margin: 0 30px;
+  font-size: 20px;
 }
 
-a {
-  color: black;
+
+h1 a {
+  color: #556b2f;
   text-decoration: none;
   font-family: "Jua", sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 1.8rem;
+  margin: 0;
+  flex-shrink: 0;
 }
 
 .box-container {
@@ -70,45 +38,41 @@ a {
   padding: 0;
 }
 
-/* 박스 스타일 */
 .box {
   flex: 1 1 240px;
   max-width: 260px;
   height: 220px;
   border: 1px solid white;
   border-radius: 10px;
-  display: flex; /* flexbox를 사용하여 내부 요소 정렬 */
-  align-items: center; /* 세로 중앙 정렬 (내부 a 태그가 flex-direction: column을 가질 때) */
-  justify-content: center; /* 가로 중앙 정렬 (내부 a 태그가 flex-direction: column을 가질 때) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px;
   box-sizing: border-box;
   background-color: white;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* 공통 그림자 */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* flex를 사용한 레이아웃 */
-/* 박스 안의 링크(a 태그)와 이미지 스타일 */
 .box a {
-  display: flex; /* flexbox 레이아웃 사용 */
-  flex-direction: column; /* 자식 요소들을 세로(위에서 아래로)로 정렬 */
-  align-items: center; /* 가로 방향으로 중앙 정렬 (이미지와 텍스트 모두) */
-  justify-content: center; /* 세로 방향으로 중앙 정렬 (박스 중앙에 이미지와 텍스트가 함께 오도록) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   color: #000;
   font-weight: bold;
-  height: 100%; /* 부모 .box의 높이를 가득 채우도록 함 */
-  padding-top: 10px; /* 상단 여백을 추가하여 이미지가 너무 위로 붙는 것을 방지 */
+  height: 100%;
+  padding-top: 10px;
 }
 
 .box img {
-  max-width: 100%; /* 이미지가 부모 요소(a 태그)의 너비를 넘지 않도록 */
-  max-height: 80%; /* 이미지의 높이를 a 태그 높이의 80%로 제한 */
-  object-fit: contain; /* 이미지의 비율을 유지하면서 내용 상자 안에 딱 맞게 조정 */
-  display: block; /* 이미지 아래에 생기는 추가 공백 제거 */
-  margin: 0 auto 10px auto; /* 이미지를 가로 중앙에 정렬하고 아래쪽에 10px 여백 */
+  max-width: 100%;
+  max-height: 80%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 10px auto;
 }
 
-/* 각 박스별 색상 및 그림자 */
 .color1 {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -129,28 +93,10 @@ a {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* 반응형 디자인 */
 @media screen and (max-width: 768px) {
   .box {
     flex: 1 1 48%;
     height: 200px;
-    max-width: 90%;
-  }
-
-  .box-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding-left: 20px;
-  }
-
-  nav ul li {
-    margin: 5px 0;
   }
 }
 
@@ -160,33 +106,81 @@ a {
     height: 180px;
   }
 }
-.popupClass {
+
+.info-box {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  gap: 30px;
+  padding-top: 30px;
+  text-align: center;
+  font-family: "배달의민족 주아";
 }
 
-@media screen and (max-width: 768px) {
-  body > div:first-of-type {
+.info-box > div {
+  width: 200px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+}
+
+.box1 {
+  background-color: #f3fe8e;
+}
+
+.box2 {
+  background-color: #ff6b6b;
+}
+
+.box3 {
+  background-color: #54cfff;
+}
+
+.info-box img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.info-box h2 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .info-box > div {
+    width: 150px;
+  }
+  .info-box img {
+    width: 50px;
+  }
+  .info-box h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-box {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    align-items: center;
   }
+  .info-box > div {
+    width: 120px;
+  }
+  .info-box img {
+    width: 40px;
+  }
+  .info-box h2 {
+    font-size: 0.9rem;
+  }
+}
 
-  .search-form {
-    width: 100%;
-  }
-
-  .search-input {
-    width: calc(100% - 100px);
-  }
-
-  .search-button {
-    width: 100px;
-  }
+.info-title {
+  font-family: "배달의민족 주아";
+  text-align: center;
 }
