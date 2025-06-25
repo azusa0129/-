@@ -106,7 +106,7 @@ h1 a {
     height: 180px;
   }
 }
-
+/* flex를 사용해 레이아웃을 구성 */
 .info-box {
   display: flex;
   flex-wrap: wrap;
@@ -152,6 +152,7 @@ h1 a {
   margin: 0;
 }
 
+/* 반응형 웹사이트 */
 @media (max-width: 768px) {
   .info-box > div {
     width: 150px;

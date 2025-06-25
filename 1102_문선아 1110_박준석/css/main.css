@@ -131,7 +131,7 @@ li a {
 .color5 {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
 }
-
+/* 반응형 웹사이트 */
 @media screen and (max-width: 768px) {
   .box {
     flex: 1 1 48%;

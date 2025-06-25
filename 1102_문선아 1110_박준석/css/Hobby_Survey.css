@@ -63,7 +63,7 @@ body {
   font-weight: bold;
   margin-top: 20px;
 }
-
+/* 반응형 웹사이트 */
 @media (min-width: 764px) {
   .survey-container {
     max-width: 600px;
