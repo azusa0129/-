@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Hobby_Survey.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <title>취미 설문</title>
+</head>
+<body>
+  <div class="survey-container">
+    <h1 class="survey-title">Hobby Survey</h1>
+    <p class="survey-subtitle">Answer a few questions and get a personalized hobby recommendation!</p>
+
+    
+    <form id="surveyForm">
+      <div class="question-step" style="display:none">
+        <p>1. 사람들과 함께하는 활동이 즐거우신가요?</p>
+        <label><input type="radio" name="q1" value="예"> 예</label>
+        <label><input type="radio" name="q1" value="아니요"> 아니요</label>
+        <br><button type="button" onclick="nextStep()">다음</button>
+      </div>
+      <div class="question-step" style="display:none">
+        <p>2. 경쟁이나 팀워크가 있는 활동을 좋아하나요?</p>
+        <label><input type="radio" name="q2" value="예"> 예</label>
+        <label><input type="radio" name="q2" value="아니요"> 아니요</label>
+        <br><button type="button" onclick="nextStep()">다음</button>
+      </div>
+      <div class="question-step" style="display:none">
+        <p>3. 실외에서 움직이는 활동을 선호하시나요?</p>
+        <label><input type="radio" name="q3" value="예"> 예</label>
+        <label><input type="radio" name="q3" value="아니요"> 아니요</label>
+        <br><button type="button" onclick="nextStep()">다음</button>
+      </div>
+      <div class="question-step" style="display:none">
+        <p>4. 실내에서 조용히 즐길 수 있는 활동이 좋으신가요?</p>
+        <label><input type="radio" name="q4" value="예"> 예</label>
+        <label><input type="radio" name="q4" value="아니요"> 아니요</label>
+        <br><button type="button" onclick="nextStep()">다음</button>
+      </div>
+      <div class="question-step" style="display:none">
+        <p>5. 무언가를 만들거나 조리하는 걸 좋아하시나요?</p>
+        <label><input type="radio" name="q5" value="예"> 예</label>
+        <label><input type="radio" name="q5" value="아니요"> 아니요</label>
+        <br><button type="button" onclick="nextStep()">다음</button>
+      </div>
+      <div class="question-step" style="display:none">
+        <p>6. 책, 글, 공연 같은 콘텐츠를 즐기시나요?</p>
+        <label><input type="radio" name="q6" value="예"> 예</label>
+        <label><input type="radio" name="q6" value="아니요"> 아니요</label>
+        <br><button type="button" onclick="nextStep()">다음</button>
+      </div>
+      <div class="question-step" style="display:none">
+        <p>7. 자연 속에서 시간을 보내는 걸 좋아하시나요?</p>
+        <label><input type="radio" name="q7" value="예"> 예</label>
+        <label><input type="radio" name="q7" value="아니요"> 아니요</label>
+        <br><button type="button" onclick="nextStep()">다음</button>
+      </div>
+      <div class="question-step" style="display:none">
+        <p>8. 사진 찍는 것을 즐기시나요?</p>
+        <label><input type="radio" name="q8" value="예"> 예</label>
+        <label><input type="radio" name="q8" value="아니요"> 아니요</label>
+        <br><button type="button" onclick="nextStep()">다음</button>
+      </div>
+      <div class="question-step" style="display:none">
+        <p>9. 사람들 앞에서 노래하거나 표현하는 걸 좋아하시나요?</p>
+        <label><input type="radio" name="q9" value="예"> 예</label>
+        <label><input type="radio" name="q9" value="아니요"> 아니요</label>
+        <br><button type="button" onclick="nextStep()">다음</button>
+      </div>
+      <div class="question-step" style="display:none">
+        <p>10. 규칙적인 신체활동을 하는 것이 좋으신가요?</p>
+        <label><input type="radio" name="q10" value="예"> 예</label>
+        <label><input type="radio" name="q10" value="아니요"> 아니요</label>
+        <br><button type="button" onclick="nextStep()">제출</button>
+      </div>
+    </form>
+
+    <div id="result-box" style="display: none; margin-top: 30px;">
+      <p id="result" style="font-size: 20px; font-weight: bold;"></p>
+      <button onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px; font-size: 16px; background-color: #8B5E3C; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        처음으로 가기
+      </button>
+    </div>
+  </div>
+  <script src="../js/Hobby_Survey.js"></script>
+</body>
+</html>

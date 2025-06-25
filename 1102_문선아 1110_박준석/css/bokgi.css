@@ -1,0 +1,89 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "배달의민족 주아", sans-serif;
+  background-color:#EDF5FF ;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.header-box {
+  background-color: #f0fbff;
+  border: 2px solid #00bfff;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: 40px;
+  color: #00bfff;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+.img6 {
+  position: absolute;
+  top: 20px;
+  left: 60px;
+  height: 220px;
+  z-index: 2;
+}
+
+@media (max-width: 796px) {
+  .img6 {
+    position: static; 
+    display: block;
+    margin: 20px auto;
+  }
+}
+
+.concept {
+  max-width: 130px;
+  width: 90%;
+  margin: 100px auto 0 auto;
+  font-size: 20px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 17px;
+  background-color: #87ceeb;
+}
+.concept-say {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+.table {
+  width: 100%;               
+  max-width: 1000px;         
+  margin: 20px auto;         
+
+}
+
+th, td {
+  border: 1px solid #ccc;   
+  padding: 12px 15px;        
+}
+
+th {
+  background-color: #87ceeb; 
+  color:black;              
+}
+.masage {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 20px;
+}

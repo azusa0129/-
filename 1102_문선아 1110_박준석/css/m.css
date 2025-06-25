@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 
+#main {
+  color: #556b2f;
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .search-form {
   display: flex;
   gap: 10px;
@@ -44,15 +51,7 @@ nav ul li {
   margin: 0 30px;
 }
 
-#main a {
-  color: #556b2f;
-  font-family: "Jua", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-decoration: none;
-}
-
-li a {
+a {
   color: black;
   text-decoration: none;
   font-family: "Jua", sans-serif;
